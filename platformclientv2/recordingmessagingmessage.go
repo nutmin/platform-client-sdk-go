@@ -146,6 +146,10 @@ func (o Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 
 		Id *string `json:"id,omitempty"`
 
+		Purpose *string `json:"purpose,omitempty"`
+
+		ParticipantId *string `json:"participantId,omitempty"`
+
 		MessageText *string `json:"messageText,omitempty"`
 
 		MessageMediaAttachments *[]Messagemediaattachment `json:"messageMediaAttachments,omitempty"`
@@ -174,6 +178,10 @@ func (o Recordingmessagingmessage) MarshalJSON() ([]byte, error) {
 		Timestamp: Timestamp,
 
 		Id: o.Id,
+
+		Purpose: o.Purpose,
+
+		ParticipantId: o.ParticipantId,
 
 		MessageText: o.MessageText,
 
@@ -226,6 +234,14 @@ func (o *Recordingmessagingmessage) UnmarshalJSON(b []byte) error {
 
 	if Id, ok := RecordingmessagingmessageMap["id"].(string); ok {
 		o.Id = &Id
+	}
+
+	if Purpose, ok := RecordingmessagingmessageMap["purpose"].(string); ok {
+		o.Purpose = &Purpose
+	}
+
+	if ParticipantId, ok := RecordingmessagingmessageMap["participantId"].(string); ok {
+		o.ParticipantId = &ParticipantId
 	}
 
 	if MessageText, ok := RecordingmessagingmessageMap["messageText"].(string); ok {
